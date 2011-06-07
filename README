@@ -1,0 +1,69 @@
+NAME
+    App::ListOrgHeadlines - An application to list headlines in Org files
+
+VERSION
+    version 0.01
+
+FUNCTIONS
+    None are exported, but they are exportable.
+
+  list_org_headlines(%args) -> [STATUS_CODE, ERR_MSG, RESULT]
+    List all headlines in all Org files.
+
+    Returns a 3-element arrayref. STATUS_CODE is 200 on success, or an error
+    code between 3xx-5xx (just like in HTTP). ERR_MSG is a string containing
+    error message, RESULT is the actual result.
+
+    Arguments ("*" denotes required arguments):
+
+    *   files* => *array*
+
+    *   detail => *bool* (default 0)
+
+        Show details instead of just titles.
+
+    *   done => *bool*
+
+        Filter todo items that are done.
+
+    *   due_in => *int*
+
+        Filter todo items which is due in this number of days.
+
+    *   from_level => *int* (default 1)
+
+        Filter headlines having this level as the minimum.
+
+    *   has_tags => *array*
+
+        Filter headlines that have the specified tags.
+
+    *   lack_tags => *array*
+
+        Filter headlines that don't have the specified tags.
+
+    *   priority => *str*
+
+        Filter todo items that have this priority.
+
+    *   state => *str*
+
+        Filter todo items that have this state.
+
+    *   to_level => *int*
+
+        Filter headlines having this level as the maximum.
+
+    *   todo => *bool* (default 0)
+
+        Filter headlines that are todos.
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
